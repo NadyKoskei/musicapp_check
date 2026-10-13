@@ -24,6 +24,11 @@ export default defineConfig([
     },
     rules: {
       'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
+      // Context files export their provider component plus a `useX` hook.
+      'react-refresh/only-export-components': [
+        'error',
+        { allowExportNames: ['usePlayer', 'useFavorites'] },
+      ],
     },
   },
 ])
